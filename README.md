@@ -193,11 +193,11 @@ python graph_posenorm.py \
 If you find this work useful please use the following citation:
 
 ```
-@article{chan2018dance,
-  title={Everybody Dance Now},
-  author={Chan, Caroline and Ginosar, Shiry and Zhou, Tinghui and Efros, Alexei A},
-  journal={arXiv preprint arXiv:1808.07371},
-  year={2018}
+@inproceedings{chan2019dance,
+ title={Everybody Dance Now},
+ author={Chan, Caroline and Ginosar, Shiry and Zhou, Tinghui and Efros, Alexei A},
+ booktitle={IEEE International Conference on Computer Vision (ICCV)},
+ year={2019}
 }
 ```
 
