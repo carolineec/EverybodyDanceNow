@@ -38,7 +38,7 @@ def tensor2label(output, n_label, imtype=np.uint8):
 
 def save_image(image_numpy, image_path):
     image_pil = Image.fromarray(image_numpy)
-    image_pil = image_pil.resize((256,256), Image.ANTIALIAS)
+    # image_pil = image_pil.resize((256,256), Image.ANTIALIAS)
     image_pil.save(image_path)
 
 def mkdirs(paths):
