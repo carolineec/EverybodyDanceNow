@@ -127,24 +127,24 @@ class Pix2PixHDModel(BaseModel):
 
     def encode_input(self, label_map, real_image=None, next_label=None, next_image=None, zeroshere=None, infer=False):
 
-        input_label = label_map.data.float().cuda()
+        input_label = label_map.data.float()
         input_label = Variable(input_label, volatile=infer)
 
         # next label for training
         if next_label is not None:
-            next_label = next_label.data.float().cuda()
+            next_label = next_label.data.float()
             next_label = Variable(next_label, volatile=infer)
 
         # real images for training
         if real_image is not None:
-            real_image = Variable(real_image.data.float().cuda())
+            real_image = Variable(real_image.data.float())
 
         # real images for training
         if next_image is not None:
-            next_image = Variable(next_image.data.float().cuda())
+            next_image = Variable(next_image.data.float())
 
         if zeroshere is not None:
-            zeroshere = zeroshere.data.float().cuda()
+            zeroshere = zeroshere.data.float()
             zeroshere = Variable(zeroshere, volatile=infer)
 
 
@@ -323,7 +323,7 @@ class Pix2PixHDModel(BaseModel):
         return initial_I_0
 
     def get_edges(self, t):
-        edge = torch.cuda.ByteTensor(t.size()).zero_()
+        edge = torch.ByteTensor(t.size()).zero_()
         edge[:,:,:,1:] = edge[:,:,:,1:] | (t[:,:,:,1:] != t[:,:,:,:-1])
         edge[:,:,:,:-1] = edge[:,:,:,:-1] | (t[:,:,:,1:] != t[:,:,:,:-1])
         edge[:,:,1:,:] = edge[:,:,1:,:] | (t[:,:,1:,:] != t[:,:,:-1,:])
