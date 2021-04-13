@@ -118,7 +118,7 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
                                            # ('pre_residual_face', util.tensor2im(preres[:, miny:maxy, minx:maxx])),
                                            ('input_face', util.tensor2im(data['label'][0][:, miny:maxy, minx:maxx], normalize=False)),
                                            ('real_image', util.tensor2im(targets[0]))])
-                visualizer.display_current_results(visuals, epoch, total_steps)
+                # visualizer.display_current_results(visuals, epoch, total_steps)
 
         ### save latest model
         if total_steps % opt.save_latest_freq == 0:
